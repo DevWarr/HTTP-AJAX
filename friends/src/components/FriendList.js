@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Friend from "./Friend";
+import "./FriendList.scss";
 
 export default class FriendList extends React.Component {
     constructor() {
