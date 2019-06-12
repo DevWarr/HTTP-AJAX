@@ -1,5 +1,4 @@
 import React from "react";
-import "./FriendList.scss";
 
 const Friend = (props) =>{
     return (
