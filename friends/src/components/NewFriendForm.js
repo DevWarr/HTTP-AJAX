@@ -4,9 +4,9 @@ export default class NewFriendForm extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-            name: "",
-            age: "",
-            email: ""
+            name:   "",
+            age:    "",
+            email:  ""
         }
     }
 
@@ -20,7 +20,12 @@ export default class NewFriendForm extends React.Component {
     submit = e => {
         e.preventDefault();
         if (this.state.name === "" || this.state.age === "" || this.state.email === "") {return}
-        this.props.submit(this.state);
+        const friend = {
+            name: this.state.name,
+            age: Number(this.state.age),
+            email: this.state.email
+        }
+        this.props.submit(friend);
     }
 
     render() {

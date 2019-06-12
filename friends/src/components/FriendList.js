@@ -35,8 +35,20 @@ export default class FriendList extends React.Component {
             })
     }
 
+    /**Take the friend obj created in NewFriendForm.js
+     * and post it to our server data.
+     * If successful, also update state.
+     * If unsuccessful, console.error.
+     */
     addFriend = friend => {
         console.log(friend);
+        axios.post("http://localhost:5000/friends", friend)
+            .then(res => {
+                this.setState({ friendsArray: res.data });
+            })
+            .catch(err => {
+                console.error("It didn't work!", err);
+            })
     }
 
 
