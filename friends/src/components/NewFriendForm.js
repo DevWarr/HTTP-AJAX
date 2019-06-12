@@ -11,7 +11,6 @@ export default class NewFriendForm extends React.Component {
     }
 
     handleChanges = e => {
-
         this.setState({
             [e.target.name]: e.target.value
         });
