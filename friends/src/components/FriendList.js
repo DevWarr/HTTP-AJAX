@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Friend from "./Friend";
+import FriendUpdateable from "./FriendUpdateable";
 import NewFriendForm from "./NewFriendForm";
 import "./FriendList.scss";
 
@@ -27,7 +28,7 @@ export default class FriendList extends React.Component {
         axios
             .get("http://localhost:5000/friends")
             .then(res => {
-                this.setState({ friendsArray:res.data })
+                this.setState({ friendsArray: res.data })
             })
             .catch(err => {
                 console.error("It didn't work!", err);
@@ -91,10 +92,11 @@ export default class FriendList extends React.Component {
 
                 <div className="friend-container">
                     {this.state.friendsArray.map(friendObj => {
-                        return  <Friend 
+                        return  <Friend
                                     friend=   {friendObj} 
                                     key=      {friendObj.id} 
                                     delete=   {this.deleteFriend}
+                                    submit=   {this.updateFriend}
                                 />
                     })}
                 </div>

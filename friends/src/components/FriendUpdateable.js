@@ -22,6 +22,12 @@ export default class FriendUpdateable extends React.Component {
         }
     }
 
+    /**Initially, each card is read-only.
+     * Once we click "UPDATE", then functionality opens up.
+     * Our text changes from UPDATE and DELETE
+     * to CANCEL and SUBMIT.
+     * Their corresponding functions change as well.
+     */
     update = () => {
         this.setState({
             leftText: "CANCEL",
@@ -35,7 +41,7 @@ export default class FriendUpdateable extends React.Component {
     }
 
     delete = () => {
-        this.props.delete(props.friend.id)
+        this.props.delete(this.props.friend.id)
     }
 
     handleChanges = e => {
@@ -44,9 +50,36 @@ export default class FriendUpdateable extends React.Component {
         });
     } 
 
+    /**Don't want to save your changes?
+     * Hit cancel!
+     * Everything is then reset back to normal.
+     */
+    cancel = () => {
+        this.setState({
+            leftText: "UPDATE",
+            leftFunc: this.update,
+
+            rightText: "DELETE",
+            rightFunc: this.delete,
+
+            name: this.props.friend.name,
+            age: this.props.friend.age,
+            email: this.props.friend.email,
+            readOnly: true
+        })
+    }
+
+    /**Much like adding a friend,
+     * this form creates the friend obj
+     * and sends it to FriendList.js to be PUT into the server.
+     * This friend obj, however, includes the id.
+     * This is so the server knows WHICH friend to update properly.
+     */
     submit = e => {
         e.preventDefault();
         if (this.state.name === "" || this.state.age === "" || this.state.email === "") {return}
+
+        // Create a new friend obj with updated info
         const friend = {
             id: this.props.id,
             name: this.state.name,
@@ -65,7 +98,7 @@ export default class FriendUpdateable extends React.Component {
             readOnly: true
         })
 
-        // Submit our changes to FreindList.js
+        // Submit our changes to FriendList.js
         this.props.submit(friend);
     }
 
@@ -79,7 +112,7 @@ export default class FriendUpdateable extends React.Component {
                     <span 
                         className="hover" 
                         onClick={this.state.leftFunc}
-                    >UPDATE</span>
+                    >{this.state.leftText}</span>
 
                     <input
                         type="text"
@@ -93,7 +126,7 @@ export default class FriendUpdateable extends React.Component {
                     <span 
                         className="hover" 
                         onClick={this.state.rightFunc}
-                    >DELETE</span>
+                    >{this.state.rightText}</span>
 
                 </div>
 
