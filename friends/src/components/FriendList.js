@@ -27,7 +27,6 @@ export default class FriendList extends React.Component {
         axios
             .get("http://localhost:5000/friends")
             .then(res => {
-                console.log(res);
                 this.setState({ friendsArray:res.data })
             })
             .catch(err => {
@@ -41,7 +40,6 @@ export default class FriendList extends React.Component {
      * If unsuccessful, console.error.
      */
     addFriend = friend => {
-        console.log(friend);
         axios.post("http://localhost:5000/friends", friend)
             .then(res => {
                 this.setState({ friendsArray: res.data });
@@ -51,6 +49,15 @@ export default class FriendList extends React.Component {
             })
     }
 
+    deleteFriend = friendId => {
+        console.log(friendId);
+        axios.delete(`http://localhost:5000/friends/${friendId}`)
+            .then(res => {
+                this.setState({ friendsArray: res.data })
+            })
+            .catch(err => console.error("Oh noes!", err));
+    }
+
 
     render() {
         return (
@@ -58,7 +65,11 @@ export default class FriendList extends React.Component {
                 <h1>The Friend Database</h1>
                 <div className="friend-container">
                     {this.state.friendsArray.map(friendObj => {
-                        return <Friend friend={friendObj} key={friendObj.id} />
+                        return  <Friend 
+                                    friend=   {friendObj} 
+                                    key=      {friendObj.id} 
+                                    delete=   {this.deleteFriend}
+                                />
                     })}
                 </div>
                 <h2>Add Friend to Database</h2>

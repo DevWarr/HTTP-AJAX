@@ -7,7 +7,7 @@ const Friend = (props) =>{
             <h3>
             <span className="hover" onClick={props.update}>UPDATE</span>
                 {props.friend.name}
-            <span className="hover" onClick={props.delete}>DELETE</span>
+            <span className="hover" onClick={() => props.delete(props.friend.id)}>DELETE</span>
             </h3>
             <ul>
                 <li>AGE:   {props.friend.age}</li>
