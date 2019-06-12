@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Friend from "./Friend";
+import NewFriendForm from "./NewFriendForm";
 import "./FriendList.scss";
 
 export default class FriendList extends React.Component {
@@ -11,8 +12,7 @@ export default class FriendList extends React.Component {
         };
     }
 
-    componentDidMount() {
-        /**Link the axios call to the 
+    /**Link the axios call to the 
          * Server port you're listening on
          * - (In this case, port 5000)
          * Within the server.js file, find the .get() function,
@@ -23,6 +23,7 @@ export default class FriendList extends React.Component {
          * /friends
          * This way, our API call will return successful
          */
+    componentDidMount() { 
         axios
             .get("http://localhost:5000/friends")
             .then(res => {
@@ -42,6 +43,7 @@ export default class FriendList extends React.Component {
                 {this.state.friendsArray.map(friendObj => {
                     return <Friend friend={friendObj} key={friendObj.id} />
                 })}
+                <NewFriendForm submit={this.addFriend}/>
             </div>
         );
     }
