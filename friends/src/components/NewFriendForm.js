@@ -17,10 +17,15 @@ export default class NewFriendForm extends React.Component {
         });
     } 
 
+    submit = e => {
+        e.preventDefault();
+        if (this.state.name === "" || this.state.age === "" || this.state.email === "") {return}
+        this.props.submit(this.state);
+    }
 
     render() {
         return (
-            <form onSubmit={() => this.props.submit(this.state)}>
+            <form onSubmit={this.submit}>
                 <input
                     type="text"
                     name="name"
@@ -43,7 +48,7 @@ export default class NewFriendForm extends React.Component {
                     placeholder="New Friend's email"
                     onChange={this.handleChanges}
                 />
-                <button type="submit">Add New Friend</button>
+                <button type="submit">Add</button>
             </form>
         );
     }

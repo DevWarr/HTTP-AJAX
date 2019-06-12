@@ -1,15 +1,30 @@
 body {
   background: black;
   color: #7bff00;
+  font-family: 'Share Tech Mono', monospace;
+  
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+
+/* The magical code here:
+   This will prevent browsers from giving inputs/buttons/etc 
+   that small outline when they are in focus.
+   Allows for more precise styling.
+*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }

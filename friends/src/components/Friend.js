@@ -6,8 +6,8 @@ const Friend = (props) =>{
         <div className="friend-card">
             <h3>{props.friend.name}</h3>
             <ul>
-                <li>{props.friend.age}</li>
-                <li>{props.friend.email}</li>
+                <li>AGE:   {props.friend.age}</li>
+                <li>EMAIL: {props.friend.email}</li>
             </ul>
         </div>
     );

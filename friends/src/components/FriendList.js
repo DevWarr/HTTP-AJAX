@@ -35,14 +35,21 @@ export default class FriendList extends React.Component {
             })
     }
 
+    addFriend = friend => {
+        console.log(friend);
+    }
+
 
     render() {
         return (
             <div className="main-container">
-                <h1>The Friend Databse</h1>
-                {this.state.friendsArray.map(friendObj => {
-                    return <Friend friend={friendObj} key={friendObj.id} />
-                })}
+                <h1>The Friend Database</h1>
+                <div className="friend-container">
+                    {this.state.friendsArray.map(friendObj => {
+                        return <Friend friend={friendObj} key={friendObj.id} />
+                    })}
+                </div>
+                <h2>Add Friend to Database</h2>
                 <NewFriendForm submit={this.addFriend}/>
             </div>
         );
