@@ -30,7 +30,7 @@ export default class NewFriendForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submit}>
+            <form className="new-friend-form" onSubmit={this.submit}>
                 <input
                     type=          "text"
                     name=          "name"

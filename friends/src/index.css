@@ -28,3 +28,21 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: black;
+}
+::-webkit-scrollbar-thumb {
+  background: #316600;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7bff00;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}

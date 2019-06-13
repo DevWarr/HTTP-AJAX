@@ -92,19 +92,19 @@ export default class FriendList extends React.Component {
 
                 <div className="friend-container">
                     {this.state.friendsArray.map(friendObj => {
-                        return  <Friend
+                        return  <FriendUpdateable
                                     friend=   {friendObj} 
                                     key=      {friendObj.id} 
                                     delete=   {this.deleteFriend}
                                     submit=   {this.updateFriend}
                                 />
                     })}
-                </div>
+                </div> {/* friend-container */}
 
                 <h2>Add Friend to Database</h2>
                 <NewFriendForm submit={this.addFriend}/>
 
-            </div>
+            </div>  /* main-container */
         );
     }
 }
