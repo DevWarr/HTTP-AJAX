@@ -36,7 +36,7 @@ button:focus {
   background: black;
 }
 ::-webkit-scrollbar-thumb {
-  background: #316600;
+  background: gray;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #7bff00;
