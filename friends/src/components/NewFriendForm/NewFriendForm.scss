@@ -14,6 +14,8 @@
         width: 100%;
         margin: auto;
         margin-top: 10%;
+        padding: 0 40px;
+        box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -21,7 +23,7 @@
         input {
             height: 2rem;
             width: 100%;
-            margin: 10px 40px;
+            margin: 10px 0;
             background: transparent;
             color: #7bff00;
             border: 1px solid #316600;
@@ -37,7 +39,7 @@
             cursor: pointer;
             height: 2rem;
             width: 40%;
-            // margin: 10px 40px;
+            margin: 10px 0;
             background: black;
             color: #7bff00;
             font-family: 'Share Tech Mono', monospace;
@@ -47,7 +49,14 @@
                 border: 1px solid #7bff00;
                 box-shadow: 1px 1px 2px white;
             }
-
+            
+            // Needed for Link styling
+            a {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #7bff00;
+            }
         }
     }
 }

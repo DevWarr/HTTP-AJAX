@@ -58,9 +58,9 @@ export default class NewFriendForm extends React.Component {
                         onChange=      {this.handleChanges}
                     />
                     <button type="submit">Add</button>
-                    <Link to="/" >
-                        <button>Cancel</button>
-                    </Link>
+                    <button>
+                        <Link to="/" >Cancel</Link>
+                    </button>
                 </form>
             </div>
         );
