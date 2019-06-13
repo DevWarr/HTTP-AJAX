@@ -10,16 +10,16 @@ export default class FriendUpdateable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            leftText: "UPDATE",
-            leftFunc: this.update,
+            leftText:    "UPDATE",
+            leftFunc:    this.update,
 
-            rightText: "DELETE",
-            rightFunc: this.delete,
+            rightText:   "DELETE",
+            rightFunc:   this.delete,
 
-            name: this.props.friend.name,
-            age: this.props.friend.age,
-            email: this.props.friend.email,
-            readOnly: true
+            name:        this.props.friend.name,
+            age:         this.props.friend.age,
+            email:       this.props.friend.email,
+            readOnly:    true
         }
     }
 
@@ -31,13 +31,13 @@ export default class FriendUpdateable extends React.Component {
      */
     update = () => {
         this.setState({
-            leftText: "CANCEL",
-            leftFunc: this.cancel,
+            leftText:  "CANCEL",
+            leftFunc:  this.cancel,
 
-            rightText: "SUBMIT",
-            rightFunc: this.submit,
+            rightText:  "SUBMIT",
+            rightFunc:  this.submit,
 
-            readOnly: false
+            readOnly:   false
         })
     }
 
@@ -57,16 +57,16 @@ export default class FriendUpdateable extends React.Component {
      */
     cancel = () => {
         this.setState({
-            leftText: "UPDATE",
-            leftFunc: this.update,
+            leftText:   "UPDATE",
+            leftFunc:   this.update,
 
-            rightText: "DELETE",
-            rightFunc: this.delete,
+            rightText:  "DELETE",
+            rightFunc:  this.delete,
 
-            name: this.props.friend.name,
-            age: this.props.friend.age,
-            email: this.props.friend.email,
-            readOnly: true
+            name:       this.props.friend.name,
+            age:        this.props.friend.age,
+            email:      this.props.friend.email,
+            readOnly:   true
         })
     }
 
@@ -82,21 +82,21 @@ export default class FriendUpdateable extends React.Component {
 
         // Create a new friend obj with updated info
         const friend = {
-            id: this.props.id,
-            name: this.state.name,
-            age: Number(this.state.age),
-            email: this.state.email
+            id:      this.props.id,
+            name:    this.state.name,
+            age:     Number(this.state.age),
+            email:   this.state.email
         }
 
         // Reset our buttons and what they do
         this.setState({
-            leftText: "UPDATE",
-            leftFunc: this.update,
+            leftText:   "UPDATE",
+            leftFunc:   this.update,
 
-            rightText: "DELETE",
-            rightFunc: this.delete,
+            rightText:  "DELETE",
+            rightFunc:  this.delete,
 
-            readOnly: true
+            readOnly:   true
         })
 
         // Submit our changes to FriendList.js
@@ -108,7 +108,7 @@ export default class FriendUpdateable extends React.Component {
         return (
             <form className="friend-card">
                 
-                <div>
+                <div className="top-row">
 
                     <span 
                         className="hover" 
@@ -116,12 +116,12 @@ export default class FriendUpdateable extends React.Component {
                     >{this.state.leftText}</span>
 
                     <input
-                        type="text"
-                        name="name"
-                        value={this.state.name}
-                        placeholder="New Friend's name"
-                        onChange={this.handleChanges}
-                        readOnly={this.state.readOnly}
+                        type=          "text"
+                        name=          "name"
+                        value=         {this.state.name}
+                        placeholder=   "New Friend's name"
+                        onChange=      {this.handleChanges}
+                        readOnly=      {this.state.readOnly}
                     />
 
                     <span 
@@ -129,32 +129,33 @@ export default class FriendUpdateable extends React.Component {
                         onClick={this.state.rightFunc}
                     >{this.state.rightText}</span>
 
-                </div>
+                </div> {/* top-row */}
 
                 <ul>
 
                     <li>
                         <span>AGE: </span>
                         <input
-                            type="number"
-                            name="age"
-                            value={this.state.age}
-                            min="0" max="120"
-                            placeholder="New Friend's age"
-                            onChange={this.handleChanges}
-                            readOnly={this.state.readOnly}
+                            type=          "number"
+                            name=          "age"
+                            value=         {this.state.age}
+                            min=           "0" 
+                            max=           "120"
+                            placeholder=   "New Friend's age"
+                            onChange=      {this.handleChanges}
+                            readOnly=      {this.state.readOnly}
                         />
                     </li>
 
                     <li>
                         <span>EMAIL: </span>
                         <input
-                            type="email"
-                            name="email"
-                            value={this.state.email}
-                            placeholder="New Friend's email"
-                            onChange={this.handleChanges}
-                            readOnly={this.state.readOnly}
+                            type=          "email"
+                            name=          "email"
+                            value=         {this.state.email}
+                            placeholder=   "New Friend's email"
+                            onChange=      {this.handleChanges}
+                            readOnly=      {this.state.readOnly}
                         />
                     </li>
                     
