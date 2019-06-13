@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import Friend from "./Friend";
-import FriendUpdateable from "./FriendUpdateable";
-import NewFriendForm from "./NewFriendForm";
+import Friend from "../Friend/Friend";
+import FriendUpdateable from "../FriendUpdateable/FriendUpdateable";
+import NewFriendForm from "../NewFriendForm/NewFriendForm";
 import "./FriendList.scss";
 
 export default class FriendList extends React.Component {
