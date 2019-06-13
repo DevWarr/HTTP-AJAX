@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NewFriendForm.scss";
 
 export default class NewFriendForm extends React.Component {
@@ -31,8 +32,8 @@ export default class NewFriendForm extends React.Component {
     render() {
         return (
             <div className="new-friend-container">
-                <h2>Add Friend to Database</h2>
                 <form className="new-friend-form" onSubmit={this.submit}>
+                    <h2>Add Friend to Database</h2>
                     <input
                         type=          "text"
                         name=          "name"
@@ -57,6 +58,9 @@ export default class NewFriendForm extends React.Component {
                         onChange=      {this.handleChanges}
                     />
                     <button type="submit">Add</button>
+                    <Link to="/" >
+                        <button>Cancel</button>
+                    </Link>
                 </form>
             </div>
         );
