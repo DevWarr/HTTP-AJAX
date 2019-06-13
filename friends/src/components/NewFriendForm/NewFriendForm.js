@@ -21,17 +21,29 @@ export default class NewFriendForm extends React.Component {
     submit = e => {
         e.preventDefault();
         if (this.state.name === "" || this.state.age === "" || this.state.email === "") {return}
+
+        // Create a new friend obj with updated info
         const friend = {
             name: this.state.name,
             age: Number(this.state.age),
             email: this.state.email
         }
+
+        // Reset the form
+        this.setState({
+            name:   "",
+            age:    "",
+            email:  ""
+        })
+
+        // Submit our changes to FriendList.js
         this.props.submit(friend);
     }
 
     render() {
         return (
-            <BackgroundCover>
+            <>
+            <BackgroundCover />
                 <NewFriendContainer>
                     <Form onSubmit={this.submit}>
                         <h2>Add Friend to Database</h2>
@@ -59,10 +71,10 @@ export default class NewFriendForm extends React.Component {
                             onChange=      {this.handleChanges}
                         />
                         <Button type="submit">Add</Button>
-                        <Button as={Link} to="/">Cancel</Button>
+                        <Button as={Link} to="/">Exit</Button>
                     </Form>
                 </NewFriendContainer>
-            </BackgroundCover>
+            </>
         );
     }
 }

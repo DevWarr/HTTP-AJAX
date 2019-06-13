@@ -95,7 +95,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        <Route exact path="/" render={() => {
+        <Route path="/" render={() => {
           return <FriendList 
                       friendsArray= {this.state.friendsArray}
                       delete=       {this.deleteFriend}

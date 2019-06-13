@@ -14,7 +14,7 @@ const FriendList = props => {
                                 friend=   {friendObj} 
                                 key=      {friendObj.id} 
                                 delete=   {props.delete}
-                                submit=   {props.update}
+                                submit=   {props.submit}
                             />
                 })}
             </div> {/* friend-container */}

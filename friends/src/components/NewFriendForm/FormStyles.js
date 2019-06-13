@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
 export const BackgroundCover = styled.div`
-    position:            relative;
+    position:            absolute;
+    top:                 0;
     width:               100%;
     height:              100vh;
-    filter:              blur(8px);
+    background:          black;
+    opacity:             0.7;
+    transition:          opacity 2s linear;
 `;
 
 export const NewFriendContainer = styled.div`
     position:            absolute;
-    top:                 50%;
+    top:                 40%;
     left:                50%;
     transform:           translate(-50%, -50%);
     -ms-transform:       translate(-50%, -50%);
@@ -17,6 +20,8 @@ export const NewFriendContainer = styled.div`
     max-width:           600px;
     width:               100%;
     height:              450px;
+    border:      1px solid #316600;
+    box-shadow:  1px 1px 2px gray;
 `;
 
 export const Form = styled.form`
