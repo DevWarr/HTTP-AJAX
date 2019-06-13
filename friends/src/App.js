@@ -1,5 +1,5 @@
 import React from 'react';
-import FriendList from './components/FriendList';
+import FriendList from './components/FriendList/FriendList';
 import './App.css';
 import {Route} from 'react-router-dom';
 

@@ -1,4 +1,5 @@
 import React from "react";
+import "./FriendUpdateable";
 
 export default class FriendUpdateable extends React.Component {
     /**Props:
