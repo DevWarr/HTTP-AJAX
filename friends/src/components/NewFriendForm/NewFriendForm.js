@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NewFriendForm.scss";
+import { NewFriendContainer, Form, Input, Button} from "./FormStyles";
 
 export default class NewFriendForm extends React.Component {
     constructor(props) {
@@ -31,17 +31,17 @@ export default class NewFriendForm extends React.Component {
 
     render() {
         return (
-            <div className="new-friend-container">
-                <form className="new-friend-form" onSubmit={this.submit}>
+            <NewFriendContainer>
+                <Form onSubmit={this.submit}>
                     <h2>Add Friend to Database</h2>
-                    <input
+                    <Input
                         type=          "text"
                         name=          "name"
                         value=         {this.state.name}
                         placeholder=   "New Friend's name"
                         onChange=      {this.handleChanges}
                     />
-                    <input
+                    <Input
                         type=          "number"
                         name=          "age"
                         value=         {this.state.age}
@@ -50,19 +50,17 @@ export default class NewFriendForm extends React.Component {
                         placeholder=   "New Friend's age"
                         onChange=      {this.handleChanges}
                     />
-                    <input
+                    <Input
                         type=          "email"
                         name=          "email"
                         value=         {this.state.email}
                         placeholder=   "New Friend's email"
                         onChange=      {this.handleChanges}
                     />
-                    <button type="submit">Add</button>
-                    <button>
-                        <Link to="/" >Cancel</Link>
-                    </button>
-                </form>
-            </div>
+                    <Button type="submit">Add</Button>
+                    <Button as={Link} to="/">Cancel</Button>
+                </Form>
+            </NewFriendContainer>
         );
     }
 }

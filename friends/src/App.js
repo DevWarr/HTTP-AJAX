@@ -85,6 +85,11 @@ export default class App extends React.Component {
           .catch(err => console.error("Oh noes!", err));
   }
 
+  leaveForm = e => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+
 
   render() {
     return (
@@ -99,7 +104,8 @@ export default class App extends React.Component {
         }} />
         <Route path="/add" render={() => {
           return <NewFriendForm
-                      submit= {this.addFriend}
+                      submit=      {this.addFriend}
+                      leaveForm=   {this.leaveForm}
                  />
         }} />
       </div>
