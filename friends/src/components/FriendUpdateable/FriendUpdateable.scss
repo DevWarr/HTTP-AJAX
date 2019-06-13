@@ -8,11 +8,18 @@
 
     // Master Styling for all inputs
     input {
-        background:    transparent;
-        color:         #7bff00;
-        border:        1px solid #316600;
-        box-shadow:    1px 1px 2px gray;
-        font-family:   'Share Tech Mono', monospace;
+        background:      transparent;
+        color:           #7bff00;
+        border:          none;
+        border-top:      1px solid #316600;
+        border-bottom:   1px solid #316600;
+        font-family:     'Share Tech Mono', monospace;
+
+        &:focus {
+            border:          none;
+            border-top:      1px solid #7bff00;
+            border-bottom:   1px solid #7bff00;
+        }
 
         // when read-only
         &:read-only {
@@ -22,7 +29,7 @@
     }
 
 
-    // <div> that contains both buttons and friend's name
+    // <div> that contains both buttons and friend's name input
     .top-row {
         margin-block-start:  1em;
         margin-block-end:    1em;
@@ -65,12 +72,16 @@
     }
 
     ul {
-        list-style: none;
-        text-align: left;
-        padding-left: 10px;
+        list-style:          none;
+        text-align:          left;
+        padding-left:        10px;
 
         li {
-            margin: 5px 0;
+            margin:          3px 0;
+
+            input {
+                font-size:   100%;
+            }
         }
     }
 }

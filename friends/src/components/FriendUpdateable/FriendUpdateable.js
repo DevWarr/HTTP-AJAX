@@ -82,7 +82,7 @@ export default class FriendUpdateable extends React.Component {
 
         // Create a new friend obj with updated info
         const friend = {
-            id:      this.props.id,
+            id:      this.props.friend.id,
             name:    this.state.name,
             age:     Number(this.state.age),
             email:   this.state.email
@@ -106,7 +106,7 @@ export default class FriendUpdateable extends React.Component {
 
     render() {
         return (
-            <form className="friend-card">
+            <form className="friend-card" onSubmit={this.submit}>
                 
                 <div className="top-row">
 
