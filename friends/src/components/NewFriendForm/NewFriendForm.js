@@ -30,32 +30,35 @@ export default class NewFriendForm extends React.Component {
 
     render() {
         return (
-            <form className="new-friend-form" onSubmit={this.submit}>
-                <input
-                    type=          "text"
-                    name=          "name"
-                    value=         {this.state.name}
-                    placeholder=   "New Friend's name"
-                    onChange=      {this.handleChanges}
-                />
-                <input
-                    type=          "number"
-                    name=          "age"
-                    value=         {this.state.age}
-                    min=           "0" 
-                    max=           "120"
-                    placeholder=   "New Friend's age"
-                    onChange=      {this.handleChanges}
-                />
-                <input
-                    type=          "email"
-                    name=          "email"
-                    value=         {this.state.email}
-                    placeholder=   "New Friend's email"
-                    onChange=      {this.handleChanges}
-                />
-                <button type="submit">Add</button>
-            </form>
+            <div className="new-friend-container">
+                <h2>Add Friend to Database</h2>
+                <form className="new-friend-form" onSubmit={this.submit}>
+                    <input
+                        type=          "text"
+                        name=          "name"
+                        value=         {this.state.name}
+                        placeholder=   "New Friend's name"
+                        onChange=      {this.handleChanges}
+                    />
+                    <input
+                        type=          "number"
+                        name=          "age"
+                        value=         {this.state.age}
+                        min=           "0" 
+                        max=           "120"
+                        placeholder=   "New Friend's age"
+                        onChange=      {this.handleChanges}
+                    />
+                    <input
+                        type=          "email"
+                        name=          "email"
+                        value=         {this.state.email}
+                        placeholder=   "New Friend's email"
+                        onChange=      {this.handleChanges}
+                    />
+                    <button type="submit">Add</button>
+                </form>
+            </div>
         );
     }
 }

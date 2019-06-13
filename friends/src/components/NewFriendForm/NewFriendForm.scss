@@ -1,42 +1,49 @@
-.new-friend-form {
-    color: #7bff00;
-    max-width: 600px;
+.new-friend-container {
+    position: fixed;
     width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+    height: 100vh;
 
-    input {
-        height: 2rem;
+    .new-friend-form {
+        position: fixed;
+        color: #7bff00;
+        max-width: 600px;
         width: 100%;
-        margin: 10px 40px;
-        background: transparent;
-        color: #7bff00;
-        border: 1px solid #316600;
-        box-shadow: 1px 1px 2px gray;
-        font-family: 'Share Tech Mono', monospace;
-        &:focus {
-            border: 1px solid #7bff00;
-            box-shadow: 1px 1px 2px white;
-        }
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
 
-    }
-    button {
-        cursor: pointer;
-        align-self: flex-start;
-        height: 2rem;
-        width: 50%;
-        margin: 10px 40px;
-        background: black;
-        color: #7bff00;
-        font-family: 'Share Tech Mono', monospace;
-        border: 1px solid #316600;
-        box-shadow: 1px 1px 2px gray;
-        &:hover {
-            border: 1px solid #7bff00;
-            box-shadow: 1px 1px 2px white;
-        }
+        input {
+            height: 2rem;
+            width: 100%;
+            margin: 10px 40px;
+            background: transparent;
+            color: #7bff00;
+            border: 1px solid #316600;
+            box-shadow: 1px 1px 2px gray;
+            font-family: 'Share Tech Mono', monospace;
+            &:focus {
+                border: 1px solid #7bff00;
+                box-shadow: 1px 1px 2px white;
+            }
 
+        }
+        button {
+            cursor: pointer;
+            align-self: flex-start;
+            height: 2rem;
+            width: 50%;
+            margin: 10px 40px;
+            background: black;
+            color: #7bff00;
+            font-family: 'Share Tech Mono', monospace;
+            border: 1px solid #316600;
+            box-shadow: 1px 1px 2px gray;
+            &:hover {
+                border: 1px solid #7bff00;
+                box-shadow: 1px 1px 2px white;
+            }
+
+        }
     }
 }
